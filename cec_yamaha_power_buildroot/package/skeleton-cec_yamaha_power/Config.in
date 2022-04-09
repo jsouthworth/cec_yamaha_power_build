@@ -1,0 +1,6 @@
+config BR2_PACKAGE_SKELETON_CEC_YAMAHA_POWER
+        bool
+	select BR2_PACKAGE_HAS_SKELETON
+
+config BR2_PACKAGE_PROVIDES_SKELETON
+        default "skeleton-cec_yamaha_power" if BR2_PACKAGE_SKELETON_CEC_YAMAHA_POWER

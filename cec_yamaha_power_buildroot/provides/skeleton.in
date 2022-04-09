@@ -1,0 +1,3 @@
+config BR2_ROOTFS_SKELETON_CEC_YAMAHA_POWER
+       bool "cec_yamaha_power skeleton"
+       select BR2_PACKAGE_SKELETON_CEC_YAMAHA_POWER

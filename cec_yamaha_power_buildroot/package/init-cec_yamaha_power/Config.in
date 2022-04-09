@@ -1,0 +1,5 @@
+config BR2_PACKAGE_INIT_CEC_YAMAHA_POWER
+       bool
+       depends on BR2_PACKAGE_CEC_YAMAHA_POWER
+       help
+         cec_yamaha_power linked to /sbin/init

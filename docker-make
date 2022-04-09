@@ -1,0 +1,12 @@
+#!/bin/bash
+set -uxo pipefail
+
+docker image ls | grep cec_yamaha_power_builder || \
+    docker build -t cec_yamaha_power_builder cec_yamaha_power_builder/
+
+docker run -it --rm \
+       -v "${CEC_YAMAHA_POWER_ROOT_DIR}/buildroot":/buildroot \
+       -v "${CEC_YAMAHA_POWER_ROOT_DIR}/cec_yamaha_power_buildroot":/cec_yamaha_power \
+       cec_yamaha_power_builder \
+       make BR2_EXTERNAL=/cec_yamaha_power "$@"
+

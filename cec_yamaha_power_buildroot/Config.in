@@ -1,0 +1,4 @@
+source "$BR2_EXTERNAL_CEC_YAMAHA_POWER_PATH/package/cec_yamaha_power/Config.in"
+source "$BR2_EXTERNAL_CEC_YAMAHA_POWER_PATH/package/init-cec_yamaha_power/Config.in"
+source "$BR2_EXTERNAL_CEC_YAMAHA_POWER_PATH/package/skeleton-cec_yamaha_power/Config.in"
+

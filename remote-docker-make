@@ -1,0 +1,15 @@
+#!/bin/bash
+set -uxo pipefail
+
+export DOCKER_HOST="ssh://${USER}@${CEC_YAMAHA_POWER_BUILDER_HOST}"
+export CEC_YAMAHA_POWER_ROOT_DIR="/home/${USER}/projects/cec_yamaha_power"
+
+rsync -az --mkpath --delete \
+      ./ \
+      "${USER}@${CEC_YAMAHA_POWER_BUILDER_HOST}:${CEC_YAMAHA_POWER_ROOT_DIR}"
+
+./docker-make "$@"
+
+rsync -az --delete \
+      "${USER}@${CEC_YAMAHA_POWER_BUILDER_HOST}:${CEC_YAMAHA_POWER_ROOT_DIR}/" \
+      ./

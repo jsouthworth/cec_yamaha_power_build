@@ -1,0 +1,7 @@
+config BR2_PACKAGE_CEC_YAMAHA_POWER
+    bool "cec_yamaha_power"
+    depends on BR2_PACKAGE_LIBCEC
+    depends on BR2_PACKAGE_HOST_GO_TARGET_ARCH_SUPPORTS
+    depends on BR2_PACKAGE_HOST_GO_TARGET_CGO_LINKING_SUPPORTS
+    help
+      CEC to IR power control for Yamaha HTR-6230
